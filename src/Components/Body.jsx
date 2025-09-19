@@ -12,26 +12,33 @@ const Body = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
 
+  console.log("Body component rendered, user:", user);
+
   const fetchUser = async () => {
+    console.log("Fetching user from:", BASE_URL + "/profile/view");
     try {
-      const user = await axios.get(BASE_URL + "/profile/view", {
+      const response = await axios.get(BASE_URL + "/profile/view", {
         withCredentials: true,
       });
-      // console.log(user.data);
-      dispatch(addUser(user.data));
+      console.log("User fetched successfully:", response.data);
+      dispatch(addUser(response.data));
     } catch (err) {
-      if (err.status == 401) {
+      console.log("Error fetching user:", err);
+      console.log("Error status:", err.response?.status);
+      if (err.response?.status === 401) {
+        console.log("Redirecting to login");
         navigate("/login");
       }
-      console.log(err);
     }
   };
 
   useEffect(() => {
+    console.log("Body useEffect triggered, user:", user);
     if (!user) {
       fetchUser();
     }
   }, []);
+
   return (
     <div>
       <Navbar />

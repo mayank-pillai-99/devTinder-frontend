@@ -25,7 +25,12 @@ const Feed = () => {
     getFeed();
   });
 
-  if (!feed) return;
+  if (!feed) return <div className="flex justify-center my-10">Loading feed...</div>;
+
+  if (!Array.isArray(feed)) {
+    console.error("Feed is not an array:", feed);
+    return <div className="flex justify-center my-10">Error loading feed</div>;
+  }
 
   if (feed.length <= 0)
     return (
@@ -34,8 +39,7 @@ const Feed = () => {
   return (
     feed && (
       <div className="flex flex-col items-center gap-4 my-5">
-        {feed && feed.map((user) => <UserCard key={user._id} user={user} />)}
-        {/* <UserCard user={feed[0]} /> */}
+        {feed.map((user) => <UserCard key={user._id} user={user} />)}
       </div>
     )
   );
