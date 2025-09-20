@@ -1,72 +1,43 @@
+# DevTinder
 
-# devTinder Frontend s
+- Create a Vite + React application
+- Remove unecessary code and create a Hello World app
+- Install Tailwind CSS
+- Install Daisy UI
+- Add NavBar component to App.jsx
+- Create a NavBar.jsx separate Component file
+- Install react router dom
+- Create BrowserRouter > Routes > Route=/ Body > RouteChildren
+- Create an Outlet in your Body Component
+- Create a footer
+- Create a Login Page
+- Install axios
+- CORS - install cors in backend => add middleware to with configurations: orgin, credentials: true
+- Whenever you're making API call so pass axios => { withCredentials: true }
+- install react-redux + @reduxjs/toolkit - https://redux-toolkit.js.org/tutorials/quick-start
+- configureStore => Provider => createSlice => add reducer to store
+- Add redux devtools in chrome
+- Login and see if your data is coming properly in the store
+- NavBar should update as soon as user logs in
+- Refactor our code to add constants file + create a components folder 
+- You should not be access other routes without login
+- If token is not present, redirect user to login page
+- Logout Feature
+- Get the feed and add the feed in th store
+- build the user card on feed
+- Edit Profile Feature
+- Show Toast Message on save of profile
+- New Page - See all my connections
+- New Page - See all my Conenction REquests
+- Feature - Accept/Reject connection request
+- Send/Ignore the user card from the feed 
+- Signup New User 
+- E2E testing
 
-## 🚀 Overview
 
-**devTinder** is a MERN stack application where developers can create profiles, send connection requests, and connect with each other, similar to a networking platform. This repository contains the frontend for devTinder.
-
-## 🛠 Tech Stack
-
--  **Frontend:** React.js, Vite, Redux Toolkit, Tailwind CSS
--  **State Management:** Redux Toolkit
--  **Backend:** [devTinder Backend](https://github.com/akshadjaiswal/devTinder-backend)
--  **Authentication:** JWT
--  **Database:** MongoDB (via backend)
-
-## 🏗️ Installation & Setup
-
-1. Clone the repository:
-```sh
-git clone https://github.com/your-username/devTinder-frontend.git
-```
-
-2. Navigate to the project directory:
-```sh
-cd devTinder-frontend
-```
-
-3. Install dependencies:
-```sh
-npm install
-```
-
-4. Start the development server:
-```sh
-npm run dev
-```
-
-## 📌 Features
-
-- 🏠 **Developer Profiles** - Create and customize your profile.
-- 🤝 **Connect with Developers** - Send and accept connection requests.
-- 🔒 **Authentication** - Secure login & signup using JWT.
-- 👀 **View Profiles** - Browse other developer profiles.
-- ✏️ **Edit Profile** - Update personal details, skills, and bio.
-- 📩 **Send Connection Requests** - Request to connect with other developers.
-- ✅ **Review Connection Requests** - Accept or reject incoming connection requests.
-- 🌍 **Responsive Design** - Fully optimized for mobile & desktop.
-
-## 🔧 API Endpoints
-
-The frontend interacts with the backend API hosted in the [devTinder-backend](https://github.com/akshadjaiswal/devTinder-backend). Ensure the backend is running before using the frontend.
-
-## 🚀 Deployment
-
-Will Soon deploy on AWS EC2 instance.
-
-## 📜 License
-
-This project is open-source and available under the MIT License.
-
-## 🤝 Contribution
-
-Contributions are welcome! Feel free to fork the repo and submit a pull request.
-
-## 💻 Learning Resources:
-
-Explore my additional repositories to deepen your understanding of related topics in the JavaScript ecosystem:
-
-- [Namaste Javascript](https://github.com/akshadjaiswal/Namaste-Javascript): A repository focused on learning Javascript concepts, from basics to advanced programming.
-- [Namaste React](https://github.com/akshadjaiswal/Namaste-React): A repository dedicated to mastering React.js, covering foundational and advanced aspects of building interactive UIs.
-
----
+Body 
+    NavBar
+    Route=/  => Feed
+    Route=/login  => Login
+    Route=/connetions => Connections
+    Router=/profile => Profile
